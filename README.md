@@ -54,8 +54,139 @@ commands:
     job-retry-all                                 retry all failed jobs
 ```
 
-
-Documentation
+Windows Documentation
 -------------
 
 Read the [documentation](https://docs.facefusion.io) for a deep dive.
+
+
+# Windows
+
+### GIT
+
+```
+winget install -e --id Git.Git
+```
+
+### Conda
+
+```
+winget install -e --id Anaconda.Miniconda3 --override "/AddToPath=1"
+```
+
+### FFmpeg
+
+```
+winget install -e --id Gyan.FFmpeg --version 7.0.2
+```
+
+### 2. Prepare Your Environment
+
+Initialize conda for your terminal:
+
+```
+conda init --all
+```
+
+Create the environment:
+
+```
+conda create --name facefusion python=3.12 pip=25.0
+```
+
+Activate the environment:
+
+```
+conda activate facefusion
+```
+
+### 3. Install Your Accelerator
+
+# Windows
+
+### CUDA
+
+Compatible with NVIDIA graphic cards:
+
+```
+conda install nvidia/label/cuda-12.9.1::cuda-runtime nvidia/label/cudnn-9.10.0::cudnn
+```
+
+### TensorRT
+
+Suitable for high performance NVIDIA graphic cards:
+
+```
+pip install tensorrt==10.12.0.36 --extra-index-url https://pypi.nvidia.com
+```
+
+### OpenVINO
+
+Suitable for Intel Arc graphic cards:
+
+```
+conda install conda-forge::openvino=2025.1.0
+```
+
+### 4. Download Your Copy
+
+Clone the repository:
+
+
+```
+git clone https://github.com/GHROTIC/facefusion-3.3.2-backup
+```
+
+
+
+Ensure to enter the directory:
+
+```
+cd facefusion
+```
+
+### 5. Install The Application
+
+
+```
+python install.py --onnxruntime default
+```
+
+```
+python install.py --onnxruntime cuda
+```
+
+```
+python install.py --onnxruntime default
+```
+
+```
+python install.py --onnxruntime directml
+```
+
+```
+python install.py --onnxruntime openvino
+```
+
+```
+python install.py --onnxruntime rocm
+```
+
+
+### 6. Reload Your Environment
+
+```
+conda deactivate
+```
+
+```
+conda activate facefusion
+```
+
+### 7. Done
+
+Finally, run the program:
+
+```
+python facefusion.py run --open-browser
+```
