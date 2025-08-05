@@ -14,12 +14,6 @@ Preview
 ![Preview](https://raw.githubusercontent.com/facefusion/facefusion/master/.github/preview.png?sanitize=true)
 
 
-Installation
-------------
-
-Be aware, the [installation](https://docs.facefusion.io/installation) needs technical skills and is not recommended for beginners. In case you are not comfortable using a terminal, our [Windows Installer](http://windows-installer.facefusion.io) and [macOS Installer](http://macos-installer.facefusion.io) get you started.
-
-
 Usage
 -----
 
@@ -54,11 +48,8 @@ commands:
     job-retry-all                                 retry all failed jobs
 ```
 
-Windows Documentation
--------------
-
-Read the [documentation](https://docs.facefusion.io) for a deep dive.
-
+Windows Installation
+------------
 
 # Windows
 
@@ -154,10 +145,6 @@ python install.py --onnxruntime default
 
 ```
 python install.py --onnxruntime cuda
-```
-
-```
-python install.py --onnxruntime default
 ```
 
 ```
